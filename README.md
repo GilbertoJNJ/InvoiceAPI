@@ -4,7 +4,7 @@
 * [2. Technologies](#technologies)
 * [3. Dependencies](#dependencies)
 * [4. Prerequisites](#prerequisites)
-* [5. Instal](#instal)
+* [5. Install](#install)
 * [6. How To Use](#how-to-use)
 
 ## Description
@@ -49,7 +49,7 @@ psql -h localhost -U postgres_user_product products -f /tmp/categoria.sql
 psql -h localhost -U postgres_user_product products
 ```
 
-## Instal 
+## Install 
 1. In the terminal, clone the project:
 ```shell script
 git clone https://github.com/GilbertoJNJ/Products-API.git
