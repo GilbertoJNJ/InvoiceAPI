@@ -1,6 +1,6 @@
-package com.gilberto.productsapi.repository;
+package com.gilberto.storeapi.repository;
 
-import com.gilberto.productsapi.entity.Product;
+import com.gilberto.storeapi.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

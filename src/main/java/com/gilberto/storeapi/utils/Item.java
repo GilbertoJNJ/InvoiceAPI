@@ -1,4 +1,4 @@
-package com.gilberto.productsapi.utils;
+package com.gilberto.storeapi.utils;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;

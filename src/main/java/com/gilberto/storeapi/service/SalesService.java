@@ -1,9 +1,9 @@
-package com.gilberto.productsapi.service;
+package com.gilberto.storeapi.service;
 
-import com.gilberto.productsapi.entity.Product;
-import com.gilberto.productsapi.exception.ProductNotFoundException;
-import com.gilberto.productsapi.repository.ProductRepository;
-import com.gilberto.productsapi.utils.Item;
+import com.gilberto.storeapi.entity.Product;
+import com.gilberto.storeapi.exception.ProductNotFoundException;
+import com.gilberto.storeapi.repository.ProductRepository;
+import com.gilberto.storeapi.utils.Item;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

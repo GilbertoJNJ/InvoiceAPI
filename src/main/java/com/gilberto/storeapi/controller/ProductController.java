@@ -1,7 +1,7 @@
-package com.gilberto.productsapi.controller;
+package com.gilberto.storeapi.controller;
 
-import com.gilberto.productsapi.entity.Product;
-import com.gilberto.productsapi.repository.ProductRepository;
+import com.gilberto.storeapi.entity.Product;
+import com.gilberto.storeapi.repository.ProductRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

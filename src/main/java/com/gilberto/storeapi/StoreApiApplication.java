@@ -1,13 +1,13 @@
-package com.gilberto.productsapi;
+package com.gilberto.storeapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProductsApiApplication {
+public class StoreApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProductsApiApplication.class, args);
+		SpringApplication.run(StoreApiApplication.class, args);
 	}
 
 }

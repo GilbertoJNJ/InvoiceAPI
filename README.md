@@ -1,4 +1,4 @@
-# Products-API
+# Store-API
 ## :book:Summary 
 * [1. Description](#description)
 * [2. Technologies](#technologies)
