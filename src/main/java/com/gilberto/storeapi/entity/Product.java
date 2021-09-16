@@ -1,4 +1,4 @@
-package com.gilberto.productsapi.entity;
+package com.gilberto.storeapi.entity;
 
 import lombok.Data;
 
