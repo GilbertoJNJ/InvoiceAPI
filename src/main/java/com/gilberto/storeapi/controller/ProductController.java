@@ -2,16 +2,12 @@ package com.gilberto.storeapi.controller;
 
 import com.gilberto.storeapi.entity.Product;
 import com.gilberto.storeapi.exception.ProductNotFoundException;
-import com.gilberto.storeapi.repository.ProductRepository;
 import com.gilberto.storeapi.service.ProductService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/products")
