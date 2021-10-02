@@ -3,7 +3,7 @@ package com.gilberto.storeapi.controller;
 import com.gilberto.storeapi.entity.Product;
 import com.gilberto.storeapi.exception.ProductNotFoundException;
 import com.gilberto.storeapi.service.SalesService;
-import com.gilberto.storeapi.utils.Item;
+import com.gilberto.storeapi.entity.Item;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,25 +19,20 @@ import java.util.List;
 public class SalesController {
 
     private SalesService salesService;
-    private List<Item> items;
+
 
     @GetMapping
     public ResponseEntity sales(@RequestParam(name = "n") Integer quantity,
                                 @RequestParam(name = "name") String name) throws ProductNotFoundException {
 
-        Product product = salesService.findByName(name);
-        Item item = salesService.newItem(product, quantity);
-        items.add(item);
+        String items = salesService.sales(quantity,name);
+        return ResponseEntity.ok().body(items);
+    }
 
-        Double total = 0.0;
-        for(int i=1; i<items.size();i++){
-            Integer n = items.get(i).getQuantity();
-            Double price = items.get(i).getSellPrice();
-            Double parcel = n * price;
-            total += parcel;
-        }
-
-        return ResponseEntity.ok().body(items+" "+"Total = "+total);
+    @GetMapping("/clean")
+    public ResponseEntity clean(){
+        salesService.cleanItemList();
+        return ResponseEntity.ok().body("The list of items was cleaned");
     }
 
 }

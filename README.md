@@ -18,13 +18,16 @@
 - <img src="https://img.shields.io/static/v1?label=docker&message=container&color=cyan&style=for-the-badge&logo=docker"/>
 - <img src="https://img.shields.io/static/v1?label=Postgres&message=database&color=blue&style=for-the-badge&logo=postgresql"/>
 - <img src="https://img.shields.io/static/v1?label=spring&message=framework&color=green&style=for-the-badge&logo=spring"/>
+- <img src="https://img.shields.io/static/v1?label=junit&message=tests&color=darkgreen&style=for-the-badge&logo=junit5"/>
+- <img src="https://img.shields.io/static/v1?label=heroku&message=deploy&color=purple&style=for-the-badge&logo=heroku"/>
 
 ## Dependencies
  - Spring Data JPA
  - Spring Web
  - Spring Boot DevTools
- - Lombok
- - PostgreSQL Driver
+ - Spring Test
+ - [Lombok](https://projectlombok.org/)
+ - [PostgreSQL](https://www.postgresql.org/)
  
 ## Prerequisites
 ### Docker
@@ -52,17 +55,22 @@ psql -h localhost -U postgres_user_product products
 ## Install 
 1. In the terminal, clone the project:
 ```shell script
-git clone https://github.com/GilbertoJNJ/Products-API.git
+git clone https://github.com/GilbertoJNJ/Store-API.git
 ```
 
 2. Enter in the projet diretory:
 ```shell script
-cd ~\products-api
+cd ~\store-api
 ```
 
 3. Execute the command:
 ```shell script
 gradle bootrun
+```
+
+To run the tests:
+```shell script
+gradle clean test
 ```
 
 ## How To Use
@@ -79,4 +87,9 @@ http://localhost:8080/products/[name]
 3. Calculation of sales:
 ``` shell script
 http://localhost:8080/sales?n=[quantity]&name=[name]
+```
+
+4. Clean sales:
+``` shell script
+http://localhost:8080/sales/clean
 ```

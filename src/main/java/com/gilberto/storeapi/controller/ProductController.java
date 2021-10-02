@@ -1,7 +1,9 @@
 package com.gilberto.storeapi.controller;
 
 import com.gilberto.storeapi.entity.Product;
+import com.gilberto.storeapi.exception.ProductNotFoundException;
 import com.gilberto.storeapi.repository.ProductRepository;
+import com.gilberto.storeapi.service.ProductService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,31 +18,18 @@ import java.util.Optional;
 @AllArgsConstructor
 public class ProductController {
 
-    private ProductRepository productRepository;
+    private ProductService productService;
 
     @GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    public Page<Product> listAll(Pageable page){
-        return productRepository.findAll(page);
+    public ResponseEntity findAll(Pageable page){
+        Page<Product> products = productService.listAll(page);
+        return ResponseEntity.ok().body(products);
     }
 
     @GetMapping("/{name}")
-    public ResponseEntity listByName(@PathVariable String name){
-        Optional<Product> product = productRepository.findByName(name);
-        if(product.isPresent()){
-            return ResponseEntity.ok().body(product.get());
-        }
-        return ResponseEntity.notFound().build();
+    public ResponseEntity findByName(@PathVariable String name) throws ProductNotFoundException {
+        Product product = productService.findByName(name);
+        return ResponseEntity.ok().body(product);
     }
-/*
-    @GetMapping("/{id}")
-    public ResponseEntity listById(@PathVariable Long id){
-        Optional<Product> product = productRepository.findById(id);
-        if(product.isPresent()){
-            return ResponseEntity.ok().body(product.get());
-        }
-        return ResponseEntity.notFound().build();
-    }
-    */
 
 }

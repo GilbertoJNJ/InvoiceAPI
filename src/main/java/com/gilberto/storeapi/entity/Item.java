@@ -1,4 +1,4 @@
-package com.gilberto.storeapi.utils;
+package com.gilberto.storeapi.entity;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;
@@ -11,8 +11,10 @@ public class Item {
     private Integer quantity;
     private Double sellPrice;
 
+
     @Override
     public String toString() {
-        return name + " => " + quantity + " x " + sellPrice;
+
+        return name + " => " + quantity + " x " + sellPrice + " = " + quantity*sellPrice;
     }
 }

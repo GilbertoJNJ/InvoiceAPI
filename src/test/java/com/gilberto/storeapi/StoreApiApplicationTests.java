@@ -1,10 +1,10 @@
-package com.gilberto.productsapi;
+package com.gilberto.storeapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProductsApiApplicationTests {
+class StoreApiApplicationTests {
 
 	@Test
 	void contextLoads() {
