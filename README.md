@@ -28,7 +28,7 @@
  - Spring Test
  - [Lombok](https://projectlombok.org/)
  - [PostgreSQL](https://www.postgresql.org/)
- 
+
 ## Prerequisites
 ### Docker
 :warning: Create Postgres database:
