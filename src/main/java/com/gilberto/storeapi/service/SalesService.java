@@ -58,5 +58,5 @@ public class SalesService {
         item.setSellPrice(product.getSellPrice());
         return item;
     }
-  
+
 }
