@@ -15,7 +15,7 @@ import java.util.List;
 public class SalesService {
 
     private ProductRepository productRepository;
-    private static List<Item> items;
+    private static List<Item> items = new ArrayList<>();
 
 
     public String sales(Integer quantity, String name) throws ProductNotFoundException {
