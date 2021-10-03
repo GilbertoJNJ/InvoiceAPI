@@ -40,7 +40,7 @@ public class SalesServiceTest {
         int quantity = 2;
         String sales = salesService.sales(quantity, expectedProduct.getName());
 
-        assertThat(sales, is(equalTo("[cerveja => 2 x 40.0 = 80.0]\nTotal = 80.0")));
+        assertThat(sales, is(equalTo("[\ncerveja => 2 x 40.0 = 80.0]\nTotal = 80.0")));
     }
 
     @Test
