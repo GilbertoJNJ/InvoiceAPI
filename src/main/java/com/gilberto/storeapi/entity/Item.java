@@ -11,10 +11,8 @@ public class Item {
     private Integer quantity;
     private Double sellPrice;
 
-
     @Override
     public String toString() {
-
-        return name + " => " + quantity + " x " + sellPrice + " = " + quantity*sellPrice;
+        return "\n" + name + " => " + quantity + " x " + sellPrice + " = " + quantity*sellPrice;
     }
 }

@@ -19,7 +19,7 @@ public class SalesService {
 
 
     public String sales(Integer quantity, String name) throws ProductNotFoundException {
-        
+
         Product product = verifyIfExists(name);
         Item item = newItem(product, quantity);
         items.add(item);
