@@ -15,6 +15,6 @@ public class Item {
     @Override
     public String toString() {
 
-        return name + " => " + quantity + " x " + sellPrice + " = " + quantity*sellPrice;
+        return "\n" + name + " => " + quantity + " x " + sellPrice + " = " + quantity*sellPrice;
     }
 }
