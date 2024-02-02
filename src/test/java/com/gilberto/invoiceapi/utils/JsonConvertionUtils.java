@@ -1,4 +1,4 @@
-package com.gilberto.storeapi.utils;
+package com.gilberto.invoiceapi.utils;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
