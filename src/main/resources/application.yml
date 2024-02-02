@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: test
+  application:
+    name: InvoiceAPI
+  datasource:
+    url: jdbc:postgresql://localhost:5432/products
+    username: postgres_user_product
+    password: super_password
+  flyway:
+    enabled: true
+    url: jdbc:postgresql://localhost:5432/products
+    user: postgres_user_product
+    password: super_password
+    baselineOnMigrate: true
+  output:
+    ansi:
+      enabled: ALWAYS
+  jpa:
+    open-in-view: true
+
+server:
+  port: 8081
+
+client:
+  logistock:
+    url: http://localhost:8080
