@@ -1,13 +1,13 @@
-package com.gilberto.storeapi;
+package com.gilberto.invoiceapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StoreApiApplication {
+public class InvoiceApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StoreApiApplication.class, args);
+		SpringApplication.run(InvoiceApiApplication.class, args);
 	}
 
 }
