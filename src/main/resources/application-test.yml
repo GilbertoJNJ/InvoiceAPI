@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: InvoiceAPI
+  datasource:
+    url: jdbc:h2:mem:testdb
+  output:
+    ansi:
+      enabled: ALWAYS
+  jpa:
+    open-in-view: true
+
+client:
+  logistock:
+    url: logistock-url
