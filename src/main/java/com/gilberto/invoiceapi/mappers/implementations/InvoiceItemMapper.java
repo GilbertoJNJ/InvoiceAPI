@@ -1,18 +1,19 @@
-package com.gilberto.invoiceapi.mappers;
+package com.gilberto.invoiceapi.mappers.implementations;
 
+import com.gilberto.invoiceapi.mappers.IMapper;
 import com.gilberto.invoiceapi.models.dto.requests.InvoiceItemForm;
 import com.gilberto.invoiceapi.models.entity.InvoiceItem;
 import com.gilberto.invoiceapi.models.dto.responses.InvoiceItemDTO;
 
-public class InvoiceItemMapper implements IMapper<InvoiceItem, InvoiceItemForm, InvoiceItemDTO>{
+public class InvoiceItemMapper implements IMapper<InvoiceItem, InvoiceItemForm, InvoiceItemDTO> {
   
   @Override
-  public InvoiceItem toEntity(InvoiceItemForm invoiceItemForm) {
+  public InvoiceItem toEntity(InvoiceItemForm form) {
     return InvoiceItem.builder()
-        .name(invoiceItemForm.name())
-        .measureUnit(invoiceItemForm.measureUnit())
-        .unitPrice(invoiceItemForm.unitPrice())
-        .quantity(invoiceItemForm.quantity())
+        .name(form.name())
+        .measureUnit(form.measureUnit())
+        .unitPrice(form.unitPrice())
+        .quantity(form.quantity())
         .build();
   }
   

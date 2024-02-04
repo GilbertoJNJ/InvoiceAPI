@@ -4,6 +4,7 @@ import com.gilberto.invoiceapi.models.dto.requests.InvoiceFilter;
 import com.gilberto.invoiceapi.models.dto.requests.InvoiceForm;
 import com.gilberto.invoiceapi.models.dto.requests.ItemForm;
 import com.gilberto.invoiceapi.models.dto.responses.InvoiceDTO;
+import com.gilberto.invoiceapi.models.dto.responses.ProductResponse;
 import com.gilberto.invoiceapi.models.entity.Invoice;
 import com.gilberto.invoiceapi.models.entity.InvoiceItem;
 import com.gilberto.invoiceapi.models.enums.MeasureUnit;
@@ -11,6 +12,7 @@ import com.gilberto.invoiceapi.models.enums.Status;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.UUID;
 
 public class ModelUtil {
@@ -31,6 +33,15 @@ public class ModelUtil {
   }
   
   public static Invoice getInvoice() {
+    var items = Collections.singletonList(
+        InvoiceItem.builder()
+            .id(1L)
+            .name("name")
+            .measureUnit(MeasureUnit.UNIT)
+            .unitPrice(BigDecimal.ONE)
+            .quantity(10)
+            .build()
+    );
     return Invoice.builder()
         .id(1L)
         .number("number")
@@ -40,6 +51,7 @@ public class ModelUtil {
         .issuerName("issuerName")
         .recipientTaxId("recipientTaxId")
         .recipientName("recipientName")
+        .items(items)
         .totalAmount(BigDecimal.TEN)
         .status(Status.APPROVED)
         .notes("notes")
@@ -58,7 +70,7 @@ public class ModelUtil {
         BigDecimal.TEN,
         Status.APPROVED,
         "notes"
-        );
+    );
   }
   
   public static InvoiceFilter getInvoiceFilter() {
@@ -69,6 +81,15 @@ public class ModelUtil {
         "search",
         LocalDate.of(2024, 01, 01),
         LocalDate.of(2024, 01, 31)
+    );
+  }
+  
+  public static ProductResponse getProductResponse() {
+    return new ProductResponse(
+        1L,
+        "productName",
+        BigDecimal.ONE,
+        MeasureUnit.UNIT
     );
   }
   

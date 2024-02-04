@@ -4,8 +4,8 @@ import com.gilberto.invoiceapi.clients.ILogiStockClient;
 import com.gilberto.invoiceapi.exceptions.ApiException;
 import com.gilberto.invoiceapi.exceptions.InvoiceNotFoundException;
 import com.gilberto.invoiceapi.mappers.IMapper;
-import com.gilberto.invoiceapi.mappers.InvoiceItemMapper;
-import com.gilberto.invoiceapi.mappers.InvoiceMapper;
+import com.gilberto.invoiceapi.mappers.implementations.InvoiceItemMapper;
+import com.gilberto.invoiceapi.mappers.implementations.InvoiceMapper;
 import com.gilberto.invoiceapi.models.dto.requests.InvoiceItemForm;
 import com.gilberto.invoiceapi.models.entity.Invoice;
 import com.gilberto.invoiceapi.models.entity.InvoiceItem;
@@ -97,7 +97,7 @@ public class InvoiceService implements IInvoiceService {
   }
   
   @Override
-  public InvoiceDTO listById(String issuerTaxId, Long id) throws InvoiceNotFoundException {
+  public InvoiceDTO findById(String issuerTaxId, Long id) throws InvoiceNotFoundException {
     return this.invoiceRepository.findByIdAndIssuerTaxId(id, issuerTaxId)
         .map(this.invoiceMapper::toDTO)
         .orElseThrow(InvoiceNotFoundException::new);

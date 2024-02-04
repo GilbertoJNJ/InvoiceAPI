@@ -13,7 +13,7 @@ public interface IInvoiceService {
   
   List<InvoiceDTO> listAll(String issuerTaxId, InvoiceFilter invoiceFilter);
   
-  InvoiceDTO listById(String issuerTaxId, Long id) throws InvoiceNotFoundException;
+  InvoiceDTO findById(String issuerTaxId, Long id) throws InvoiceNotFoundException;
   
   InvoiceDTO cancelInvoice(String issuerTaxId, Long id) throws InvoiceNotFoundException;
   

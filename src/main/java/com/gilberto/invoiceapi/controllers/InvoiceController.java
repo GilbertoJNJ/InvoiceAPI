@@ -56,7 +56,7 @@ public class InvoiceController {
     public ResponseEntity<Object> findById(@RequestHeader String issuerTaxId,
                                                @PathVariable Long id) {
         try {
-            var invoice = this.invoiceService.listById(issuerTaxId, id);
+            var invoice = this.invoiceService.findById(issuerTaxId, id);
             return ResponseEntity.ok().body(invoice);
         } catch (InvoiceNotFoundException exception) {
             return ResponseEntity.status(NOT_FOUND)

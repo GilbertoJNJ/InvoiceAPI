@@ -1,5 +1,6 @@
-package com.gilberto.invoiceapi.mappers;
+package com.gilberto.invoiceapi.mappers.implementations;
 
+import com.gilberto.invoiceapi.mappers.IMapper;
 import com.gilberto.invoiceapi.models.entity.Invoice;
 import com.gilberto.invoiceapi.models.dto.requests.InvoiceForm;
 import com.gilberto.invoiceapi.models.dto.responses.InvoiceDTO;

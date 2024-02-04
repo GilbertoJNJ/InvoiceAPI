@@ -147,7 +147,7 @@ public class InvoiceControllerTest {
     var invoiceDTO = ModelUtil.getInvoiceDTO();
     
     // When
-    when(this.invoiceService.listById(ISSUER_TAX_ID, INVOICE_ID))
+    when(this.invoiceService.findById(ISSUER_TAX_ID, INVOICE_ID))
         .thenReturn(invoiceDTO);
     
     // Then
@@ -163,7 +163,7 @@ public class InvoiceControllerTest {
   @Test
   public void whenGETIsCalledWithInValidIdThenNotFoundStatusMustBeReturned() throws Exception {
     // When
-    when(this.invoiceService.listById(ISSUER_TAX_ID, INVALID_INVOICE_ID))
+    when(this.invoiceService.findById(ISSUER_TAX_ID, INVALID_INVOICE_ID))
         .thenThrow(InvoiceNotFoundException.class);
     
     // Then
