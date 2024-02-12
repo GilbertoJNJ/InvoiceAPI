@@ -32,7 +32,7 @@
  - [Swagger](https://swagger.io/)
 
 ## Integration
-This API has an integration with the LogiStockAPI to find products informations
+This API has integration with LogiStockAPI to find product information
 
 - ✨ [LogiStockAPI](https://github.com/GilbertoJNJ/LogiStockAPI)
 
