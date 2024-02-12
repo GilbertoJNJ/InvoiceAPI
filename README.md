@@ -33,9 +33,9 @@
 
 ## Integration
 This API has an integration with the LogiStockAPI to find products informations
-```
-https://github.com/GilbertoJNJ/LogiStockAPI
-```
+
+- ✨ [LogiStockAPI](https://github.com/GilbertoJNJ/LogiStockAPI)
+
 
 ## Install 
 1. In the terminal, clone the project:
