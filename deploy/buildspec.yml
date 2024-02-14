@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+  build:
+    commands:
+      - ./gradlew bootJar
+  post_build:
+    commands:
+      - echo Build Completed
+artifacts:
+  files:
+    - build/libs/*.jar
+    - scripts/*.sh
+    - appspec.yml
