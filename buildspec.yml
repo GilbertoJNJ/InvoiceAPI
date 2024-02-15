@@ -15,5 +15,5 @@ phases:
 artifacts:
   files:
     - build/libs/*.jar
-    - deploy/scripts/*.sh
-    - deploy/appspec.yml
+    - scripts/*.sh
+    - appspec.yml
