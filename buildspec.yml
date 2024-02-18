@@ -10,6 +10,7 @@ phases:
       - sed -i "s|spring.datasource.username = .*|spring.datasource.username = $DATASOURCE_USERNAME|g" src/main/resources/application.yml
       - sed -i "s|spring.datasource.password = .*|spring.datasource.password = $DATASOURCE_PASSWORD|g" src/main/resources/application.yml
       - sed -i "s|client.logistock.url = .*|client.logistock.url = $LOGISTOCK_URL|g" src/main/resources/application.yml
+      - cat src/main/resources/application.yml
 
       - chmod +x gradlew
   build:
