@@ -1,0 +1,35 @@
+version: 0.2
+
+env:
+  variables:
+    PROFILE: "default"
+    DATASOURCE_URL: "pedra"
+    DATASOURCE_USERNAME: "papel"
+    DATASOURCE_PASSWORD: "tesoura"
+    LOGISTOCK_URL: "lagarto"
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+    commands:
+      - chmod +w src/main/resources/application.yml
+      - sed -i "s|spring.profiles.active = .*|spring.profiles.active = ${PROFILE}|g" src/main/resources/application.yml
+      - sed -i "s|spring.datasource.url = .*|spring.datasource.url = ${DATASOURCE_URL}|g" src/main/resources/application.yml
+      - sed -i "s|spring.datasource.username = .*|spring.datasource.username = ${DATASOURCE_USERNAME}|g" src/main/resources/application.yml
+      - sed -i "s|spring.datasource.password = .*|spring.datasource.password = ${DATASOURCE_PASSWORD}|g" src/main/resources/application.yml
+      - sed -i "s|client.logistock.url = .*|client.logistock.url = ${LOGISTOCK_URL}|g" src/main/resources/application.yml
+      - cat src/main/resources/application.yml
+
+      - chmod +x gradlew
+  build:
+    commands:
+      - ./gradlew bootJar
+  post_build:
+    commands:
+      - echo Build Completed
+artifacts:
+  files:
+    - build/libs/*.jar
+    - scripts/*.sh
+    - appspec.yml
