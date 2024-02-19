@@ -13,6 +13,7 @@ phases:
     runtime-versions:
       java: corretto17
     commands:
+      - chmod +w src/main/resources/application.yml
       - sed -i "s|spring.profiles.active = .*|spring.profiles.active = ${PROFILE}|g" src/main/resources/application.yml
       - sed -i "s|spring.datasource.url = .*|spring.datasource.url = ${DATASOURCE_URL}|g" src/main/resources/application.yml
       - sed -i "s|spring.datasource.username = .*|spring.datasource.username = ${DATASOURCE_USERNAME}|g" src/main/resources/application.yml
